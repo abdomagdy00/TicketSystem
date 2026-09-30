@@ -20,5 +20,7 @@ public class Ticket :BaseEntity
 
     // Navigation Properties
     public Category category { get; set; }=null!;
-
+    public User CreatedByUser { get; set; } = null!;
+    public User? AssignedToAgent { get; set; }
+    public ICollection<TicketComment> Comments { get; set; } = new List<TicketComment>();
 }
